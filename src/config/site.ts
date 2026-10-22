@@ -32,11 +32,12 @@ export const site = {
   formsEndpoint: (import.meta.env.VITE_FORMS_ENDPOINT as string | undefined) || '',
 } as const;
 
-export type ContactMethod = 'phone' | 'sms' | 'telegram' | 'whatsapp' | 'email';
+export type ContactMethod = 'phone' | 'sms' | 'max' | 'telegram' | 'whatsapp' | 'email';
 
 export const contactMethods: { value: ContactMethod; label: string }[] = [
   { value: 'phone', label: 'Звонок' },
   { value: 'sms', label: 'SMS' },
+  { value: 'max', label: 'MAX' },
   { value: 'telegram', label: 'Telegram' },
   { value: 'whatsapp', label: 'WhatsApp' },
   { value: 'email', label: 'Электронная почта' },

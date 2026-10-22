@@ -4,6 +4,8 @@ import { Consent, Field, PageHero, SuccessCard, usePageMeta } from '../component
 import { site } from '../config/site';
 import { formatPhone, isEmailValid, isPhoneValid, submitForm } from '../lib/submit';
 
+const messengerLabels: Record<string, string> = { telegram: 'Telegram', whatsapp: 'WhatsApp', max: 'MAX', vk: 'ВКонтакте' };
+
 const topics = ['Вопрос об услугах', 'Помощь для близкого', 'Волонтёрство', 'Благодарность', 'Жалоба или предложение', 'Другое'];
 
 export default function Contacts() {
@@ -74,7 +76,7 @@ export default function Contacts() {
             {messengers.length > 0 && (
               <div className="messengers">
                 {messengers.map(([name, url]) => (
-                  <a key={name} href={url} target="_blank" rel="noopener noreferrer" className="btn btn--ghost btn--sm">{name}</a>
+                  <a key={name} href={url} target="_blank" rel="noopener noreferrer" className="btn btn--ghost btn--sm">{messengerLabels[name] || name}</a>
                 ))}
               </div>
             )}
