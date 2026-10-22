@@ -50,7 +50,7 @@ export default function Home() {
       <section className="section">
         <div className="container about-short">
           <div className="about-short__media">
-            <img src={img(photos.hands, 800, 640)} alt="Руки сотрудницы бережно держат руки пожилого человека" loading="lazy" />
+            <img src={img(photos.hands, 800, 640)} srcSet={`${img(photos.hands, 480, 384)} 480w, ${img(photos.hands, 800, 640)} 800w`} sizes="(max-width: 900px) 100vw, 45vw" alt="Руки сотрудницы бережно держат руки пожилого человека" loading="lazy" />
           </div>
           <div>
             <SectionHead eyebrow="О службе" title="Рядом, когда нужна поддержка" />
@@ -138,7 +138,7 @@ export default function Home() {
       <section className="section section--tight">
         <div className="container">
           <div className="banner">
-            <img className="banner__bg" src={img(photos.volunteers, 1400, 500)} alt="" loading="lazy" />
+            <img className="banner__bg" src={img(photos.volunteers, 1400, 500)} srcSet={`${img(photos.volunteers, 800, 500)} 800w, ${img(photos.volunteers, 1400, 500)} 1400w`} sizes="100vw" alt="" loading="lazy" />
             <div className="banner__content">
               <h2>Станьте волонтёром</h2>
               <p>Помогите пожилым и одиноким людям Севастополя. Найдём направление, которое подойдёт именно вам.</p>

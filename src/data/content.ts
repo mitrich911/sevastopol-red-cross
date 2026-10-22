@@ -5,8 +5,8 @@ import {
   ListChecks, FileText, PenLine, PlayCircle, Car, Laptop, Megaphone, Package,
 } from 'lucide-react';
 
-export const img = (id: string, w = 1200, h?: number) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}${h ? `&h=${h}` : ''}&q=75`;
+// Фото хранятся на самом сайте (public/img), чтобы не зависеть от внешних сервисов.
+export const img = (name: string, w: number, h: number) => `${import.meta.env.BASE_URL}img/${name}-${w}x${h}.webp`;
 
 export type ServiceCategory = 'home' | 'social' | 'support';
 
@@ -168,11 +168,11 @@ export const faq: { q: string; a: string }[] = [
 ];
 
 export const photos = {
-  hero: '1576765608535-5f04d1e3f289',
-  care: '1631815588090-d4bfec5b1ccb',
-  hands: '1584515933487-779824d29309',
-  team: '1559839734-2b71ea197ec2',
-  volunteers: '1593113598332-cd288d649433',
-  volunteersAlt: '1544027993-37dbfe43562a',
-  elderly: '1447005497901-b3e9ee359928',
+  hero: 'hero',
+  care: 'care',
+  hands: 'hands',
+  team: 'team',
+  volunteers: 'volunteers',
+  volunteersAlt: 'volunteersAlt',
+  elderly: 'elderly',
 };

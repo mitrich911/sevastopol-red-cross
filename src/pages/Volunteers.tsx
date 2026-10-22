@@ -84,7 +84,7 @@ export default function Volunteers() {
             </ul>
             <p>Волонтёрам выдаётся книжка добровольца, ведётся учёт часов. Мы обучаем, поддерживаем и благодарим за помощь.</p>
           </div>
-          <img className="rounded-img" src={img(photos.volunteers, 800, 600)} alt="Волонтёры собирают наборы помощи" loading="lazy" />
+          <img className="rounded-img" src={img(photos.volunteers, 800, 600)} srcSet={`${img(photos.volunteers, 480, 360)} 480w, ${img(photos.volunteers, 800, 600)} 800w`} sizes="(max-width: 900px) 100vw, 50vw" alt="Волонтёры собирают наборы помощи" loading="lazy" />
         </div>
       </section>
 

@@ -28,7 +28,7 @@ export function usePageMeta(title: string, description?: string) {
 export function PageHero({ title, lead, photo, children }: { title: string; lead?: string; photo?: string; children?: ReactNode }) {
   return (
     <section className={`page-hero${photo ? ' page-hero--photo' : ''}`}>
-      {photo && <img className="page-hero__bg" src={img(photo, 1600, 700)} alt="" />}
+      {photo && <img className="page-hero__bg" src={img(photo, 1600, 700)} srcSet={`${img(photo, 800, 600)} 800w, ${img(photo, 1600, 700)} 1600w`} sizes="100vw" alt="" />}
       <div className="container page-hero__inner">
         <h1>{title}</h1>
         {lead && <p className="page-hero__lead">{lead}</p>}

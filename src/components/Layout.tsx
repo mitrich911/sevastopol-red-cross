@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail, MapPin, Clock, Eye, ArrowUp } from 'lucide-react';
 import { Logo } from './ui';
@@ -151,7 +151,9 @@ export default function Layout() {
       </div>
 
       <main id="main">
-        <Outlet />
+        <Suspense fallback={<div className="page-loading" aria-busy="true" />}>
+          <Outlet />
+        </Suspense>
       </main>
 
       <footer className="footer">

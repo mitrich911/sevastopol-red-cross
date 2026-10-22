@@ -1,17 +1,20 @@
-import { StrictMode } from 'react';
+import { StrictMode, lazy } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import Services from './pages/Services';
-import Help from './pages/Help';
-import Apply from './pages/Apply';
-import Documents from './pages/Documents';
-import Volunteers from './pages/Volunteers';
-import About from './pages/About';
-import Contacts from './pages/Contacts';
-import { NotFound, Privacy } from './pages/Misc';
+import '@fontsource-variable/golos-text/wght.css';
 import './styles.css';
+
+const Services = lazy(() => import('./pages/Services'));
+const Help = lazy(() => import('./pages/Help'));
+const Apply = lazy(() => import('./pages/Apply'));
+const Documents = lazy(() => import('./pages/Documents'));
+const Volunteers = lazy(() => import('./pages/Volunteers'));
+const About = lazy(() => import('./pages/About'));
+const Contacts = lazy(() => import('./pages/Contacts'));
+const Privacy = lazy(() => import('./pages/Misc').then((m) => ({ default: m.Privacy })));
+const NotFound = lazy(() => import('./pages/Misc').then((m) => ({ default: m.NotFound })));
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

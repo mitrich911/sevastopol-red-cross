@@ -40,7 +40,7 @@ export default function About() {
               медицинскими и социальными учреждениями города.
             </p>
           </div>
-          <img className="rounded-img" src={img(photos.elderly, 800, 600)} alt="Пожилой мужчина с улыбкой" loading="lazy" />
+          <img className="rounded-img" src={img(photos.elderly, 800, 600)} srcSet={`${img(photos.elderly, 480, 360)} 480w, ${img(photos.elderly, 800, 600)} 800w`} sizes="(max-width: 900px) 100vw, 50vw" alt="Пожилой мужчина с улыбкой" loading="lazy" />
         </div>
       </section>
 
