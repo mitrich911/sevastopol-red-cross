@@ -108,13 +108,12 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 /* ===== Logo ===== */
 .logo { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); }
-.logo__mark { width: 46px; height: 46px; border-radius: 12px; box-shadow: 0 0 0 1px var(--line); }
+.logo__mark { width: 40px; height: 40px; }
 .logo__text { display: flex; flex-direction: column; line-height: 1.15; }
-.logo__text strong { font-size: 19px; font-weight: 800; color: var(--red); }
+.logo__text strong { font-size: 18px; font-weight: 800; color: var(--red); white-space: nowrap; }
 .logo__text small { font-size: 12.5px; color: var(--muted); }
 .logo--light .logo__text strong { color: #fff; }
 .logo--light .logo__text small { color: rgba(255, 255, 255, .7); }
-.logo--light .logo__mark { box-shadow: none; }
 
 /* ===== Topbar & header ===== */
 .topbar { background: var(--gray); font-size: .82rem; color: var(--muted); border-bottom: 1px solid var(--line); }
@@ -511,4 +510,11 @@ a.contact-card:hover { background: var(--red-soft); color: var(--ink); }
 /* При увеличенном тексте меню всегда в «бургере», чтобы шапка не переполнялась */
 html[data-size='large'] .nav, html[data-size='xlarge'] .nav { display: none; }
 html[data-size='large'] .burger, html[data-size='xlarge'] .burger { display: grid; }
-@media (max-width: 379px) { .logo__text small { display: none; } .logo__mark { width: 40px; height: 40px; } .header__logo { min-width: 0; } }
+@media (max-width: 379px) {
+  .header__inner { gap: 8px; }
+  .logo { gap: 8px; }
+  .logo__text strong { font-size: 14.5px; }
+  .logo__text small { font-size: 11.5px; }
+  .logo__mark { width: 30px; height: 30px; }
+  .burger { width: 44px; height: 44px; }
+}

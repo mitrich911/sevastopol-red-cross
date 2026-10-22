@@ -7,13 +7,12 @@ import { site } from '../config/site';
 export function Logo({ light = false }: { light?: boolean }) {
   return (
     <span className={`logo${light ? ' logo--light' : ''}`}>
-      <svg className="logo__mark" viewBox="0 0 48 48" aria-hidden="true">
-        <rect width="48" height="48" rx="12" fill="#fff" />
-        <path fill="#D52B1E" d="M18 7h12v11h11v12H30v11H18V30H7V18h11z" />
+      <svg className="logo__mark" viewBox="0 0 30 30" aria-hidden="true">
+        <path fill="#D52B1E" d="M10 0h10v10h10v10H20v10H10V20H0V10h10z" />
       </svg>
       <span className="logo__text">
-        <strong>Красный Крест</strong>
-        <small>Севастополь · служба милосердия</small>
+        <strong>Российский Красный Крест</strong>
+        <small>Севастопольское отделение</small>
       </span>
     </span>
   );
