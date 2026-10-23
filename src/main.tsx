@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import '@fontsource-variable/golos-text/wght.css';
+import '@fontsource-variable/montserrat/wght.css';
 import './styles.css';
 
 const Services = lazy(() => import('./pages/Services'));

@@ -6,13 +6,15 @@ import { site } from '../config/site';
 
 export function Logo({ light = false }: { light?: boolean }) {
   return (
+    // Logo of the Russian Red Cross (brand book, section 01) with the regional office descriptor beside it.
+    // The logo always sits on its own white round plate, so it works on dark backgrounds as is.
     <span className={`logo${light ? ' logo--light' : ''}`}>
-      <svg className="logo__mark" viewBox="0 0 30 30" aria-hidden="true">
-        <path fill="#D52B1E" d="M10 0h10v10h10v10H20v10H10V20H0V10h10z" />
-      </svg>
+      <img className="logo__mark" src={`${import.meta.env.BASE_URL}img/rkk-logo.svg`} width="48" height="48" alt="" />
       <span className="logo__text">
-        <strong>Российский Красный Крест</strong>
-        <small>Севастопольское отделение</small>
+        <span className="sr-only">Российский Красный Крест — </span>
+        <span>Севастопольское</span>
+        <span>региональное</span>
+        <span>отделение</span>
       </span>
     </span>
   );
